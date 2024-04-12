@@ -1,29 +1,17 @@
 # Google Docker
 
-## Clone git repo
-
-`git clone https://github.com/BS-Laboratory/vcf2maf.git` 
-
 ## Start Repository 
 
-```
-gcloud artifacts repositories create vep-vcf2maf --repository-format=docker \
-    --project=bhoom-lab-01 \
-    --location=us-east1 --description="vep_vcf2maf"
-```
+`gcloud artifacts repositories create vep-vcf2maf --repository-format=docker     --location=us-east1 --description="vep_vcf2maf"`
 
 ## List Repositories
 
-```
-gcloud artifacts repositories list
-```
+`gcloud artifacts repositories list`
 
 ## Build 
 
 ```
-cd vcf2maf
-gcloud builds submit --region=us-east1 \
---tag us-west1-docker.pkg.dev/bhoom-lab-01/vep-vcf2maf/vep:102
+gcloud builds submit --region=us-east1 --tag us-west2-docker.pkg.dev/bhoom-lab-01/vep-vcf2maf/vep:102
 ```
 
 ## Provision GCE
