@@ -16,10 +16,17 @@ RUN swupd bundle-add --no-progress curl && \
 
 # Use conda to install remaining tools/dependencies into /usr/local
 ENV VEP_VERSION=102.0 \
+<<<<<<< HEAD
     HTSLIB_VERSION \
     BCFTOOLS_VERSION \
     SAMTOOLS_VERSION \
     LIFTOVER_VERSION
+=======
+    HTSLIB_VERSION=1.17 \
+    BCFTOOLS_VERSION=1.18 \
+    SAMTOOLS_VERSION=1.18 \
+    LIFTOVER_VERSION=447
+>>>>>>> 693936e (update dockerfile to version 41450)
 RUN conda create -qy -p /usr/local \
     -c conda-forge \
     -c bioconda \
