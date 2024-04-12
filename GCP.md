@@ -11,11 +11,11 @@
 ## Build 
 
 ```
-gcloud builds submit --region=us-east1 --tag us-west2-docker.pkg.dev/bhoom-lab-01/vep-vcf2maf/vep:102
+gcloud builds submit --region=us-east1 --tag us-east1-docker.pkg.dev/bhoom-lab-01/vep-vcf2maf/vep:102
 ```
 
 ## Provision GCE
-0. Check the artifact registry page, and follow the deploy to GCE instruction.
+0. [Check the artifact registry page](https://console.cloud.google.com/artifacts?referrer=search&project=bhoom-lab-01), and follow the deploy to GCE instruction.
 
 1. Need to authenticate artifact registry
 ```
