@@ -1,7 +1,7 @@
-FROM clearlinux:latest AS builder
+FROM clearlinux:base AS builder
 
 # Install a minimal versioned OS into /install_root, and bundled tools if any
-ENV CLEAR_VERSION=33980
+ENV CLEAR_VERSION=41450
 RUN swupd os-install --no-progress --no-boot-update --no-scripts \
     --version ${CLEAR_VERSION} \
     --path /install_root \
@@ -16,10 +16,10 @@ RUN swupd bundle-add --no-progress curl && \
 
 # Use conda to install remaining tools/dependencies into /usr/local
 ENV VEP_VERSION=102.0 \
-    HTSLIB_VERSION=1.10.2 \
-    BCFTOOLS_VERSION=1.10.2 \
-    SAMTOOLS_VERSION=1.10 \
-    LIFTOVER_VERSION=377
+    HTSLIB_VERSION=1.17 \
+    BCFTOOLS_VERSION=1.18 \
+    SAMTOOLS_VERSION=1.18 \
+    LIFTOVER_VERSION=447
 RUN conda create -qy -p /usr/local \
     -c conda-forge \
     -c bioconda \
